@@ -1,38 +1,17 @@
-import { STALLS } from '@/content/stalls'
+import { getHotspotsByZone } from '@/content/hotspots'
+import { Stall } from '@/components/Stall'
 
+/** 序章里并排的三家早点摊（纯装饰，不可交互） */
 export function StallRow() {
   return (
     <div className="stall-row" aria-hidden="true">
-      {STALLS.map((stall) => (
-        <article key={stall.id} className={`stall stall--${stall.id}`}>
-          <div className="stall__steam">
-            <span />
-            <span />
-            <span />
-          </div>
-
-          <div className="stall__sign">
-            <span className="stall__seal">{stall.seal}</span>
-            <span>{stall.shopName}</span>
-          </div>
-
-          <div className="stall__awning" />
-
-          <div className="stall__body">
-            <div className="stall__bulbs">
-              <i />
-              <i />
-              <i />
-            </div>
-            <div className="stall__window" />
-            <div className="stall__glow" />
-            <div className="stall__counter" />
-            <div className="stall__legs">
-              <i />
-              <i />
-            </div>
-          </div>
-        </article>
+      {getHotspotsByZone('dawn').map((hotspot) => (
+        <Stall
+          key={hotspot.id}
+          theme={hotspot.theme}
+          seal={hotspot.fragment.seal}
+          shopName={hotspot.name}
+        />
       ))}
     </div>
   )

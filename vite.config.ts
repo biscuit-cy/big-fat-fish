@@ -5,6 +5,8 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // 相对路径，方便部署到 GitHub Pages 等子目录
+  base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

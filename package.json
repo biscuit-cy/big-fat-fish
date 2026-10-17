@@ -2,7 +2,7 @@
   "name": "guozao-jianghu",
   "private": true,
   "version": "0.1.0",
-  "description": "过早江湖：一条会回应你的武汉早餐街。武汉大学零杯网页设计大赛参赛项目。",
+  "description": "市井烟火·百味人间：一条可以走进去的武汉老街，课程网页设计大作业。",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#15201c" />
+    <title>市井烟火 · 百味人间（基础阅读模式）</title>
+    <!-- 不使用 CSS 变量 / clamp() / gap，确保 IE11 也能获得可读的排版 -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0 0 4rem;
+        background: #15201c;
+        background-image: linear-gradient(180deg, #101a17, #15201c 45%, #0b1210);
+        color: #f4ecde;
+        font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      a {
+        color: #e0834d;
+      }
+
+      .wrap {
+        width: 92%;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .notice {
+        margin: 0;
+        padding: 0.75rem 1.2rem;
+        background: #2b231c;
+        border-bottom: 1px solid #6b4527;
+        color: #e6d8c5;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      header {
+        padding: 4rem 0 2.4rem;
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        color: #e0834d;
+        font-size: 13px;
+        letter-spacing: 0.28em;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+        font-size: 56px;
+        font-weight: normal;
+        line-height: 1.25;
+        letter-spacing: 0.14em;
+      }
+
+      .lead {
+        max-width: 34rem;
+        margin: 1.4rem 0 0;
+        color: #c7bba8;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+        font-size: 17px;
+      }
+
+      .meta {
+        margin-top: 1.4rem;
+        color: #8a7f70;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+      }
+
+      section.zone {
+        margin-top: 3.4rem;
+        padding-top: 1.6rem;
+        border-top: 1px solid #33403a;
+      }
+
+      .zone__head {
+        overflow: hidden;
+      }
+
+      h2 {
+        float: left;
+        margin: 0;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+        font-size: 28px;
+        font-weight: normal;
+        letter-spacing: 0.1em;
+      }
+
+      .zone__time {
+        float: right;
+        margin-top: 10px;
+        color: #8a7f70;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+      }
+
+      .zone__sub {
+        clear: both;
+        margin: 0.4rem 0 1.6rem;
+        padding-top: 0.6rem;
+        color: #c7bba8;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+      }
+
+      article.story {
+        margin-bottom: 2rem;
+        padding: 1.2rem 1.4rem;
+        border-left: 2px solid #a9623d;
+        background: #1b2621;
+      }
+
+      .story h3 {
+        margin: 0;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+        font-size: 21px;
+        font-weight: normal;
+        letter-spacing: 0.06em;
+      }
+
+      .story__time {
+        color: #8a7f70;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+
+      .story__intro {
+        margin: 0.8rem 0;
+        color: #c7bba8;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+      }
+
+      .story p {
+        margin: 0.5rem 0;
+        font-size: 15px;
+      }
+
+      .fragment {
+        margin-top: 0.9rem;
+        padding-top: 0.8rem;
+        border-top: 1px dashed #6b4527;
+        color: #c7bba8;
+        font-size: 13px;
+      }
+
+      .fragment strong {
+        color: #e0834d;
+        font-family: 'Kaiti SC', KaiTi, STKaiti, 'Songti SC', serif;
+        font-weight: normal;
+        letter-spacing: 0.08em;
+      }
+
+      footer {
+        margin-top: 3rem;
+        padding-top: 1.4rem;
+        border-top: 1px solid #33403a;
+        color: #8a7f70;
+        font-size: 13px;
+      }
+
+      @media (max-width: 640px) {
+        header {
+          padding: 2.6rem 0 1.6rem;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .lead {
+          font-size: 16px;
+        }
+
+        article.story {
+          padding: 1rem;
+        }
+
+        .story p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="notice">
+      当前浏览器版本过低，已进入基础阅读模式。使用新版 Chrome / Edge / Safari 可获得完整漫游体验。
+    </p>
+
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">武汉老街 · 交互叙事</p>
+        <h1>市井烟火<br />百味人间</h1>
+        <p class="lead">
+          六点四十七分，这条街先于城市醒来。从清晨菜市场走到深夜烧烤摊，
+          八段普通人的故事，八枚烟火碎片。
+        </p>
+        <p class="meta">06:47 — 23:30 · 基础阅读模式</p>
+      </header>
+
+      <section class="zone">
+        <div class="zone__head">
+          <h2>清晨菜市场</h2>
+          <span class="zone__time">06:47 — 08:30</span>
+        </div>
+        <p class="zone__sub">六点四十七分，城市还没醒。</p>
+
+        <article class="story">
+          <h3>陈记热干面</h3>
+          <span class="story__time">06:52</span>
+          <p class="story__intro">“过早冇？第一次来？面要掸得干，麻酱才搅得开。”</p>
+          <p>陈伯把面在滚水里一掸，捞起来，手腕一抖，麻酱落进碗里。</p>
+          <p>“头一回吧？这个辣度，下次我就记住了。”</p>
+          <p>墙上的录取通知书复印件被油烟熏黄了，他每天收摊前都擦一遍相框。</p>
+          <p class="fragment">烟火碎片：<strong>辣得蛮扎实</strong> —— “下次来，我记得你的辣度。”</p>
+        </article>
+
+        <article class="story">
+          <h3>周姐豆皮</h3>
+          <span class="story__time">07:05</span>
+          <p class="story__intro">“赶时间就站着吃，不赶就等这一锅。”</p>
+          <p>你站在旁边等，没催她。</p>
+          <p>她手上的动作慢了一点：“莫急，好的是要等。”</p>
+          <p>账本背面，贴着她女儿写“我妈是这条街起得最早的人”的作文奖状。</p>
+          <p class="fragment">烟火碎片：<strong>等得及</strong> —— “莫急，好的是要等。”</p>
+        </article>
+
+        <article class="story">
+          <h3>婆婆豆浆</h3>
+          <span class="story__time">07:18</span>
+          <p class="story__intro">“最后一杯了。”</p>
+          <p>婆婆给你多套了一层塑料袋：“带给谁？路上莫洒了。”</p>
+          <p>豆浆桶见了底，她把最后一点刮进杯里。</p>
+          <p>“卖了二十年，下大雨也来。总有人等着。”</p>
+          <p class="fragment">烟火碎片：<strong>坐一会儿</strong> —— “卖了二十年，总有人等着。”</p>
+        </article>
+      </section>
+
+      <section class="zone">
+        <div class="zone__head">
+          <h2>午后老街</h2>
+          <span class="zone__time">14:00 — 17:30</span>
+        </div>
+        <p class="zone__sub">阳光把影子拉得很长。</p>
+
+        <article class="story">
+          <h3>老周修表摊</h3>
+          <span class="story__time">15:10</span>
+          <p class="story__intro">“表停了不可怕，怕的是没人再上弦。”</p>
+          <p>老周把放大镜卡在眼眶上，镊子尖挑开表壳。</p>
+          <p>柜台里躺着十几只等修的表，每一只都压着一张写了名字的纸条。</p>
+          <p>“表没坏，是忘了上弦。”他说完，把一只停了十年的表重新拨动。</p>
+          <p class="fragment">烟火碎片：<strong>时间会走</strong> —— “表没坏，是忘了上弦。”</p>
+        </article>
+
+        <article class="story">
+          <h3>褪色的旧海报</h3>
+          <span class="story__time">15:40</span>
+          <p class="story__intro">楚剧团，1987 年，最后一场《柜中缘》。</p>
+          <p>海报被雨水泡过，边角卷起来，颜色只剩一层浅浅的红。</p>
+          <p>背面有人用圆珠笔写：等你回来，老位置。</p>
+          <p>字迹已经淡了，但每一笔都还在。</p>
+          <p class="fragment">烟火碎片：<strong>旧纸有光</strong> —— “字淡了，人还记得。”</p>
+        </article>
+
+        <article class="story">
+          <h3>檐下打盹的猫</h3>
+          <span class="story__time">16:20</span>
+          <p class="story__intro">它每天下午都睡在这块青砖上。</p>
+          <p>猫把身子团成一个圆，尾巴垂在台阶外。</p>
+          <p>有人经过，它耳朵动一下，眼睛不睁。</p>
+          <p>整条街的午后，被它睡成了两句：一句是阳光，一句是风。</p>
+          <p class="fragment">烟火碎片：<strong>半个下午</strong> —— “它把一下午睡成了两句。”</p>
+        </article>
+      </section>
+
+      <section class="zone">
+        <div class="zone__head">
+          <h2>深夜烧烤摊</h2>
+          <span class="zone__time">20:30 — 23:30</span>
+        </div>
+        <p class="zone__sub">还有一盏灯为晚归的人亮着。</p>
+
+        <article class="story">
+          <h3>老李烧烤</h3>
+          <span class="story__time">22:10</span>
+          <p class="story__intro">“再晚也开，总有人这个点才下班。”</p>
+          <p>炭火红起来的时候，老李把第一把肉串架上去。</p>
+          <p>塑料凳上坐着刚下夜班的人，领带松着，手机扣在桌上。</p>
+          <p>“再晚，也有一口热的。”他说。</p>
+          <p class="fragment">烟火碎片：<strong>炭火不睡</strong> —— “再晚，也有一口热的。”</p>
+        </article>
+
+        <article class="story">
+          <h3>深夜糖水铺</h3>
+          <span class="story__time">23:00</span>
+          <p class="story__intro">“最后一碗桂花糊，收摊了。”</p>
+          <p>锅里只剩最后一碗，桂花的香气浮在热气上。</p>
+          <p>老板娘把碗推过来：“收摊前，总留一碗。”</p>
+          <p>街灯一盏盏灭下去，甜味还留在舌尖。</p>
+          <p class="fragment">烟火碎片：<strong>甜到最后</strong> —— “收摊前，总留一碗。”</p>
+        </article>
+      </section>
+
+      <footer>
+        <p>
+          基础阅读模式不包含拖拽漫游、动态光影、Canvas 粒子、环境音与留言墙。
+          完整版本请使用新版浏览器访问。
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
