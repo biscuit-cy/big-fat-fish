@@ -43,12 +43,29 @@ npm run dev
 
 ## 技术栈
 
-- Vite 8 + React 19 + TypeScript
-- Zustand（场景状态 + `persist` 本地持久化）
-- Framer Motion（点火、拖拽、转场）
-- 原生 Pointer Events / `requestAnimationFrame`（相机平移与惯性）
-- Canvas 2D（氛围粒子）
-- 原生 localStorage（带隐私模式与配额降级）
+| 分类     | 技术 / 库                                     | 版本 | 用途                                                     |
+| -------- | --------------------------------------------- | ---- | -------------------------------------------------------- |
+| 构建工具 | Vite                                          | 8    | 开发服务器、生产构建、路径别名                           |
+| 前端框架 | React + React DOM                             | 19   | 组件化 UI 与场景编排                                     |
+| 语言     | TypeScript                                    | 6    | 类型约束、内容数据结构定义                               |
+| 样式     | Tailwind CSS                                  | 4    | Preflight 重置；其余为手写 BEM 风格 CSS                  |
+| 状态管理 | Zustand + `persist`                           | 5    | 阶段、碎片、留言、静音与本地持久化                       |
+| 动画     | Framer Motion                                 | 14   | 点火、火柴拖拽、故事卡转场、`reduced-motion` 支持        |
+| 街景相机 | 原生 Pointer Events + `requestAnimationFrame` | —    | 拖拽平移、惯性与边界限制；滚轮缩放；键盘行走             |
+| 光影系统 | CSS 自定义属性 + 颜色插值                     | —    | 漫游进度驱动的天空、日月、雾气、窗灯与摊灯               |
+| 粒子特效 | Canvas 2D                                     | —    | 清晨雾粒、午后浮尘、夜晚火星；DPR 适配与性能分级         |
+| 音频     | 原生 `Audio` API                              | —    | 三段环境音交叉淡入淡出、静音与自动播放解锁（素材待接入） |
+| 本地存储 | localStorage                                  | —    | 收集进度、留言墙、音效设置；隐私模式与配额异常兜底       |
+| 代码质量 | Oxlint + Prettier + EditorConfig              | —    | 静态检查、格式化、编辑器统一                             |
+
+实际安装版本以 `package.json` 和 `package-lock.json` 为准。项目不依赖后端，构建产物为纯静态文件。
+
+### 浏览器与适配
+
+- **桌面端**：Chrome / Edge 等现代浏览器；拖拽漫游、滚轮缩放、方向键行走
+- **移动端**：≤ 820px 自动切换纵向滚动布局，触控目标 ≥ 44px，适配安全区
+- **旧浏览器**：React 19 与 ES Module 无法在 IE 中运行，通过 `nomodule` 跳转到 `legacy.html` 静态阅读页
+- **动效降级**：`prefers-reduced-motion` 下关闭惯性、粒子与装饰动画
 
 ## 目录结构
 
@@ -89,7 +106,7 @@ public/
   legacy.html            # IE / 旧浏览器降级阅读页
   audio/README.md        # 环境音素材接入说明
 docs/
-  项目策划案.md          # 早期产品策划（部分内容已被本版本取代）
+  项目策划案.md          # 定位、体验设计、技术方案与评分对标
 ```
 
 ## 内容与实现约定
@@ -125,4 +142,4 @@ npm run build
 
 ## 文档
 
-- [项目策划案](docs/项目策划案.md)
+- [项目策划案](docs/项目策划案.md)：定位、用户与场景、核心体验、技术方案、执行计划与评分标准对标
